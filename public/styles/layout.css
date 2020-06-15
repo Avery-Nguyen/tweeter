@@ -25,6 +25,8 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
- nav {
-  font-family: 'Bungee', cursive;
+ main {
+   margin: auto;
+   background-color: #f4f1ec;
+   width: 90%;
  }
