@@ -2,9 +2,6 @@ section article{
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-
-.tweet-container {
   margin-top: 1.5em;
   border: 4px solid #545149;
 }
