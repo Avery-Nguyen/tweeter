@@ -1,7 +1,6 @@
 $(document).ready(function() {
   $("article").hover(function() {
     $(this).toggleClass('shadow');
-    $(this).find(".handle").show();
 
   });
   $("article").hover(function () {
