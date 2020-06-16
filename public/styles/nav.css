@@ -6,6 +6,9 @@ nav {
   align-items: center;
   justify-content: space-between;
   font-family: 'Bungee', cursive;
+  position: fixed; 
+  top: 0;
+  width: 100%; 
 }
 
 span {
