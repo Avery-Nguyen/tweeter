@@ -2,11 +2,11 @@ $(document).ready(function() {
   $("#tweet-text").keyup(function() {
     const max = 140;
     const char = $(this).val().length;
-    $(".counter").text(140 - char);
+    $(this).parent().find("output").text(140 - char);
     if (char >= max) {
-      $(".counter").css('color', 'red');
+      $(this).parent().find("output").css('color', 'red');
     } else if (char < max) {
-      $(".counter").css('color', '#545149');
+      $(this).parent().find("output").css('color', '#545149');
     }
   });
 });
