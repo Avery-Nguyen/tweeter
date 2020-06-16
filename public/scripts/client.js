@@ -4,7 +4,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-// Test / driver code (temporary). Eventually will get this from the server.
 
 $(document).ready(function() {
 
@@ -41,6 +40,29 @@ $(document).ready(function() {
   
   
   const createTweetElement = function(tweet) {
+    //time ago
+    const current = new Date();
+    const past = tweet.created_at;
+    const differenceInTime = current.getTime() - past;
+
+    const days = differenceInTime / (1000 * 60 * 60 * 24);
+    const years = Math.floor(days / 365);
+    const hours = days * 24;
+    const minutes = hours * 60;
+    const seconds = minutes * 60;
+    let date;
+    if (days > 365) {
+      date = years.toFixed(0) + ' years ago';
+    } else if (seconds < 60) {
+      date = seconds.toFixed(0) + ' seconds ago';
+    } else if (minutes < 60) {
+      date = minutes.toFixed(0) + ' minutes ago';
+    } else if (hours < 24) {
+      date = hours.toFixed(0) + ' hours ago';
+    } else {
+      date = days.toFixed(0) + ' days ago'
+    }
+    
     let $tweet = $(`
     <article id="tweets-container">
       <header>
@@ -52,7 +74,7 @@ $(document).ready(function() {
       </header>
       <p class="tweet-content">${tweet.content.text}</p>
       <footer>
-        <p class="time">${tweet.created_at} days ago</p>
+        <p class="time">${date}</p>
         <div class="media">
           <div>🚩</div>
           <div>🔄</div>
