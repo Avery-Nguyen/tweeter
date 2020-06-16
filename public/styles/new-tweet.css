@@ -22,6 +22,10 @@ button {
   margin-top: 1em;
 }
 
+.red {
+  color: red;
+}
+
 #tweet-text {
   resize: none;
   border: none;

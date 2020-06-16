@@ -4,9 +4,9 @@ $(document).ready(function() {
     const char = $(this).val().length;
     $(this).parent().find("output").text(140 - char);
     if (char >= max) {
-      $(this).parent().find("output").css('color', 'red');
+      $(this).parent().find("output").addClass('red');
     } else if (char < max) {
-      $(this).parent().find("output").css('color', '#545149');
+      $(this).parent().find("output").removeClass('red');
     }
   });
 });
