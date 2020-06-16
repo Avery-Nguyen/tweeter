@@ -1,16 +1,40 @@
+section article{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .tweet-container {
   margin-top: 1.5em;
   border: 4px solid #545149;
 }
 
-.tweet-corner {
+article header, footer {
   display: flex;
-  flex-grow: 1;
   justify-content: space-between;
-  margin: 1em;
+  margin: 0.5em;
 }
 
-.media {
+article footer {
+  width: 98%;
+  height: 50px;
+  font-size: 15px;
+  border-top: 4px solid #545149;
+  margin: auto;
   display: flex;
   align-items: center
+}
+.media {
+  display: flex;
+  align-items: flex-start;
+  
+}
+
+.tweet-content {
+  margin: 0.5em;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: row;
 }
