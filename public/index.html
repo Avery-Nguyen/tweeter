@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css"/>
     <link rel="stylesheet" href="/styles/header.css" type="text/css"/>
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css"/>
+    <link rel="stylesheet" href="/styles/tweets.css" type="text/css"/>
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -30,7 +31,7 @@
     </nav>
 
     <!-- Page-specific (main) content here -->
-    <header>
+    <header class="header-back">
       <div class="profile">
           <img src="/images/profile-hex.png"> 
       </div>
@@ -50,6 +51,24 @@
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
+      </section>
+      <section class="tweet-container">
+        <article class="post-tweets">
+          <header class="tweet-corner">
+            <img>
+            <p class= "name">Sir Bob</p> 
+            <p class="handle">@SirBob</p>
+          </header>
+          <p class="tweet-content"> Lorem ipsum dolor sit amet.</p>
+          <footer class="tweet-corner">
+            <p class="time"> 10 days ago</p>
+            <div class "media">
+              <div>🚩</div>
+              <div>🔄</div>
+              <div>💙</div>
+            </div>
+          </footer>
+        </article>
       </section>
     </main>
   </body>
