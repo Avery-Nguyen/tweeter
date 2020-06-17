@@ -7,6 +7,9 @@ button {
  color: #ffffff;
  border: none;
 }
+.new-tweet {
+  display: none;
+}
 
 .tweet {
   font-weight: bold;

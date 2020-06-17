@@ -111,4 +111,8 @@ $(document).ready(function() {
 
   loadTweets();
 
+  $('#write-a-tweet').click(function(){
+    $('.new-tweet').toggle('slow');
+  });
+
 });
