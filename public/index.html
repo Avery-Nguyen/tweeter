@@ -32,31 +32,33 @@
     </nav>
 
     <!-- Page-specific (main) content here -->
-    <header class="header-back">
-      <div class="profile">
-          <img src="/images/profile-hex.png"> 
-      </div>
-      <br>
-      <div class="profile">
-          <h2>Your Name</h2>
-      </div>
-  </header>
-    <main class="container">
-      <section class="new-tweet">
-        <form class="tweet" id="post-tweet">
-          <div id="error">
-          </div>
-          <label for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text" ></textarea>
-          <div class="btn-tweet">
-            <button type="submit" id="tweetBtn">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
-          </div>
-        </form>
-      </section>
-      <section id="tweets-container">
-      </section>
-      <button onclick="topFunction()" id="topBtn" title="Go to top">Top</button>
-    </main>
+    <div id="screen">
+      <header class="header-back">
+        <div class="profile">
+            <img src="/images/profile-hex.png"> 
+        </div>
+        <br>
+        <div class="profile">
+            <h2>Your Name</h2>
+        </div>
+      </header>
+      <main class="container">
+        <section class="new-tweet">
+          <form class="tweet" id="post-tweet">
+            <div id="error">
+            </div>
+            <label for="tweet-text">What are you humming about?</label>
+            <textarea name="text" id="tweet-text" ></textarea>
+            <div class="btn-tweet">
+              <button type="submit" id="tweetBtn">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text">140</output>
+            </div>
+          </form>
+        </section>
+        <section id="tweets-container">
+        </section>
+        <button onclick="topFunction()" id="topBtn" title="Go to top">Top</button>
+      </main>
+    </div>
   </body>
 </html>
