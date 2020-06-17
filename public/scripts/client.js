@@ -88,21 +88,23 @@ $(document).ready(function() {
     return $tweet
   }
   
-  renderTweets(data);
 
   $('#post-tweet').submit((event) => {
     event.preventDefault();
-    
-     const data = $(this).serialize();
-     console.log("data", data)
+    const data = $(this).serialize();
+    //  console.log("data", data)
 
-    $.post('/tweets', data)
+    $.post('/tweets/', data)
+    .then(() => {
+      loadTweets();
+    });
 
-    // $.getJSON('/tweets/')
-    // .then(function (data) {
-    // console.log("data", data)
-    // //add create tweet element and render functions
-    // });
   });
-
+  const loadTweets = function () {
+    $.getJSON('/tweets/')
+    .then(function (data) {
+      renderTweets(data);
+    //add create tweet element and render functions
+    });
+  }
 });
