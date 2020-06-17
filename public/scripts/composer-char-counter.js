@@ -9,4 +9,5 @@ $(document).ready(function() {
       $(this).parent().find("output").removeClass('red');
     }
   });
+
 });

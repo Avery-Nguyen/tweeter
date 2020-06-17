@@ -1,13 +1,13 @@
-$(document).ready(function() {
-  $("article").hover(function() {
-    $(this).toggleClass('shadow');
 
+const hoverShadow = function() {
+  $(".tweeter-container").hover(function() {
+    $(this).toggleClass('shadow');
   });
-  $("article").hover(function() {
+  $(".tweeter-container").hover(function() {
     $(this).find(".handle").show();
   },
   function() {
     $(this).find(".handle").hide();
   }
   );
-});
+};

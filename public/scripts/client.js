@@ -42,7 +42,7 @@ $(document).ready(function() {
     }
     //html element
     let $tweet = $(`
-    <article id="tweets-container">
+    <article class="tweeter-container">
       <header>
         <div class="profile-info">
           <img src="${tweet.user.avatars}" height="60px">
@@ -86,6 +86,7 @@ $(document).ready(function() {
     $.post('/tweets', data)
       .then(() => {
         loadTweets();
+        $('#tweet-text').val('')
       });
   });
 
@@ -95,12 +96,11 @@ $(document).ready(function() {
       .then(function(data) {
         $('#tweets-container').empty();
         renderTweets(data);
-      });
+        hoverShadow();
+        $('.counter').text(140);
+      }); 
   };
 
-  
-
   loadTweets();
-
 
 });
