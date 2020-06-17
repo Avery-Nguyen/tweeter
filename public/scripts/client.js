@@ -14,7 +14,12 @@ $(document).ready(function() {
       $('#tweets-container').prepend(newTweet);
     }
   };
-  
+  const escape =  function(str) {
+    let div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
+
   //create html template from the data
   const createTweetElement = function(tweet) {
     
@@ -50,7 +55,7 @@ $(document).ready(function() {
         </div>
         <p class="handle">${tweet.user.handle}</p>
       </header>
-      <p class="tweet-content">${tweet.content.text}</p>
+      <p class="tweet-content">${escape(tweet.content.text)}</p>
       <footer>
         <p class="time">${date}</p>
         <div class="media">
@@ -87,6 +92,7 @@ $(document).ready(function() {
       .then(() => {
         loadTweets();
         $('#tweet-text').val('')
+        $('.counter').text(140);
       });
   });
 
@@ -97,7 +103,7 @@ $(document).ready(function() {
         $('#tweets-container').empty();
         renderTweets(data);
         hoverShadow();
-        $('.counter').text(140);
+        
       }); 
   };
 
