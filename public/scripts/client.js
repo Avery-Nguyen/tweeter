@@ -17,6 +17,8 @@ $(document).ready(function() {
   
   //create html template from the data
   const createTweetElement = function(tweet) {
+    
+    
     //time ago
     const current = new Date();
     const past = tweet.created_at;
@@ -65,10 +67,8 @@ $(document).ready(function() {
   
   //AJAX post request from forms
   $('#post-tweet').submit(function(event) {
-    console.log("event", event);
     event.preventDefault();
     const data = $(this).serialize();
-    console.log("data", data);
     $.post('/tweets', data)
       .then(() => {
         loadTweets();
@@ -84,5 +84,15 @@ $(document).ready(function() {
       });
   };
   
+  const validateTweet = function(string){
+    if ((string === "") || (string === null)){
+      alert('ERROR: Please enter a message!')
+    } else if (string.length > 140){
+      alert('ERROR: Exceed character limit')
+    }
+  };
+
   loadTweets();
+
+
 });
