@@ -71,10 +71,10 @@ $(document).ready(function() {
   //validate correct input in textarea
   const validateTweet = function(string){
     if ((string === "") || (string === null)){
-      alert('ERROR: Please enter a message!')
+      $('#error').text('⚠ ERROR: text field empty! ⚠').slideDown();
       return true;
     } else if (string.length > 140){
-      alert('ERROR: Exceed character limit')
+      $('#error').text('⚠ ERROR: Exceed character limit ⚠').slideDown();
       return true;
     }
   };
@@ -82,10 +82,12 @@ $(document).ready(function() {
   //AJAX post request from forms
   $('#post-tweet').submit(function(event) {
     event.preventDefault();
-    const text = $('#tweet-text').val()
+    const text = $('#tweet-text').val().trim()
     const validate = validateTweet(text);
     if (validate){
       return;
+    } else {
+      $('#error').slideUp();
     }
     const data = $(this).serialize();
     $.post('/tweets', data)
