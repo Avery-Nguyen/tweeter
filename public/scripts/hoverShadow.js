@@ -3,10 +3,10 @@ $(document).ready(function() {
     $(this).toggleClass('shadow');
 
   });
-  $("article").hover(function () {
+  $("article").hover(function() {
     $(this).find(".handle").show();
-  }, 
-  function () {
+  },
+  function() {
     $(this).find(".handle").hide();
   }
   );

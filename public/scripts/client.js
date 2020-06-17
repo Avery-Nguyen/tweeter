@@ -13,7 +13,7 @@ $(document).ready(function() {
       const newTweet = createTweetElement(tweet);
       $('#tweets-container').prepend(newTweet);
     }
-  }
+  };
   
   //create html template from the data
   const createTweetElement = function(tweet) {
@@ -37,7 +37,7 @@ $(document).ready(function() {
     } else if (hours < 24) {
       date = hours.toFixed(0) + ' hours ago';
     } else {
-      date = days.toFixed(0) + ' days ago'
+      date = days.toFixed(0) + ' days ago';
     }
     //html element
     let $tweet = $(`
@@ -59,29 +59,29 @@ $(document).ready(function() {
         </div>
       </footer>
      </article>
-    `)
-    return $tweet
-  }
+    `);
+    return $tweet;
+  };
   
   //AJAX post request from forms
-  $('#post-tweet').submit(function (event) {
-  console.log("event", event)
+  $('#post-tweet').submit(function(event) {
+    console.log("event", event);
     event.preventDefault();
     const data = $(this).serialize();
-    console.log("data", data)
+    console.log("data", data);
     $.post('/tweets', data)
-    .then(() => {
-      loadTweets();
-    });
+      .then(() => {
+        loadTweets();
+      });
   });
 
   //function to load database to html
-  const loadTweets = function () {
+  const loadTweets = function() {
     $.getJSON('/tweets')
-    .then(function (data) {
-      $('#tweets-container').empty();
-      renderTweets(data);
-    });
+      .then(function(data) {
+        $('#tweets-container').empty();
+        renderTweets(data);
+      });
   };
   
   loadTweets();
