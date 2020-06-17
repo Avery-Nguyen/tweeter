@@ -98,13 +98,14 @@ $(document).ready(function() {
     .then(() => {
       loadTweets();
     });
-
   });
+
   const loadTweets = function () {
     $.getJSON('/tweets/')
     .then(function (data) {
+      $('#tweets-container').empty();
       renderTweets(data);
-    //add create tweet element and render functions
     });
-  }
+  };
+  loadTweets();
 });
