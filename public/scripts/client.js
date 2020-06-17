@@ -110,6 +110,7 @@ $(document).ready(function() {
   };
 
   loadTweets();
+  
   //toggles new-tweet section
   $('#write-a-tweet').click(function(){
     $('.new-tweet').toggle('slow');
