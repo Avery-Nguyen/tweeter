@@ -18,7 +18,6 @@ $(document).ready(function() {
   //create html template from the data
   const createTweetElement = function(tweet) {
     
-    
     //time ago
     const current = new Date();
     const past = tweet.created_at;
@@ -64,10 +63,25 @@ $(document).ready(function() {
     `);
     return $tweet;
   };
-  
+  //validate correct input in textarea
+  const validateTweet = function(string){
+    if ((string === "") || (string === null)){
+      alert('ERROR: Please enter a message!')
+      return true;
+    } else if (string.length > 140){
+      alert('ERROR: Exceed character limit')
+      return true;
+    }
+  };
+
   //AJAX post request from forms
   $('#post-tweet').submit(function(event) {
     event.preventDefault();
+    const text = $('#tweet-text').val()
+    const validate = validateTweet(text);
+    if (validate){
+      return;
+    }
     const data = $(this).serialize();
     $.post('/tweets', data)
       .then(() => {
@@ -83,14 +97,8 @@ $(document).ready(function() {
         renderTweets(data);
       });
   };
+
   
-  const validateTweet = function(string){
-    if ((string === "") || (string === null)){
-      alert('ERROR: Please enter a message!')
-    } else if (string.length > 140){
-      alert('ERROR: Exceed character limit')
-    }
-  };
 
   loadTweets();
 
