@@ -26,13 +26,16 @@ $(document).ready(function() {
     //time ago
     const current = new Date();
     const past = tweet.created_at;
-    const differenceInTime = current.getTime() - past;
+    const differenceInTime = (current.getTime()) - past;
 
     const days = differenceInTime / (1000 * 60 * 60 * 24);
     const years = Math.floor(days / 365);
     const hours = days * 24;
+    console.log("createTweetElement -> hours", hours)
     const minutes = hours * 60;
+    console.log("createTweetElement -> minutes", minutes)
     const seconds = minutes * 60;
+    console.log("createTweetElement -> seconds", seconds)
     let date;
     if (days > 365) {
       date = years.toFixed(0) + ' years ago';
@@ -66,6 +69,7 @@ $(document).ready(function() {
       </footer>
      </article>
     `);
+    console.log(date);
     return $tweet;
   };
   //validate correct input in textarea

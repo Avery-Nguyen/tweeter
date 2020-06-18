@@ -13,6 +13,7 @@ nav {
 span {
   margin: 1.5em;
 }
+
 #write-tweet {
   display: flex;
   flex-direction: column;
@@ -22,6 +23,7 @@ span {
   transform: rotate(90deg);
   color:red;
 }
+/* style to make not look like a button */
 #write-a-tweet{
   padding: 0px;
   margin: 1.5em 1.5em 0em 1.5em;
@@ -30,11 +32,12 @@ span {
   color: white;
   outline: none;
 }
+
 #logo {
   font-size: 35px;
   font-family: 'Bungee', cursive;
 }
-
+ /* sroll to the top button */
 #topBtn {
   display: none; 
   position: fixed; 

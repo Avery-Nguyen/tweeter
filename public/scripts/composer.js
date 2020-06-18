@@ -13,7 +13,7 @@ $(document).ready(function() {
   btn.click(function(event){
     event.preventDefault();
     $('html, body').animate({scrollTop:0}, '300');
-    $('.new-tweet').toggle('slow');
+    $('.new-tweet').show();
     $('#tweet-text').focus();
   });
 });

@@ -1,12 +1,7 @@
 label {
   margin-top: 1em;
 }
-/* tweet button */
-#tweetBtn {
- background-color:  #4056A1;
- color: #ffffff;
- border: none;
-}
+
 /* to hide tweet form */
 .new-tweet {
   display: none;
@@ -36,6 +31,14 @@ label {
   border: none;
   border-bottom: 4px solid #545149;
   background-color: #f4f1ec;
+  outline: none;
+}
+
+/* tweet button */
+#tweetBtn {
+ background-color:  #4056A1;
+ color: #ffffff;
+ border: none;
 }
 
 /* error message */
