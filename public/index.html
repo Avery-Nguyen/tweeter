@@ -7,6 +7,7 @@
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
     <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,700;1,300;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
@@ -31,7 +32,9 @@
       <span id="logo">tweeter</span>
       <div id="write-tweet">
         <button id="write-a-tweet"><b>Write</b> a new tweet</button>
-        <img id="down-arrow" src="images/round_double_arrow_black_18dp 2_down.png">
+        <div class="material-icons" id="down-arrow">
+          double_arrow
+        </div>
     </div>
     </nav>
 
@@ -61,7 +64,7 @@
         </section>
         <section id="tweets-container">
         </section>
-        <button onclick="topFunction()" id="topBtn" title="Go to top">Top</button>
+        <button class="material-icons" id="topBtn" >double_arrow</button>
       </main>
     </div>
   </body>
