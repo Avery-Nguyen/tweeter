@@ -24,7 +24,9 @@ article footer {
 .media {
   display: flex;
   align-items: flex-start;
-  
+  color:  #4056A1;
+  font-size: 18px;
+  opacity: 0.5;
 }
 
 .tweet-content {

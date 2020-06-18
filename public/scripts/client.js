@@ -59,9 +59,9 @@ $(document).ready(function() {
       <footer>
         <p class="time">${date}</p>
         <div class="media">
-          <div>🚩</div>
-          <div>🔄</div>
-          <div>💙</div>
+          <div class="material-icons">flag</div>
+          <div class="material-icons">repeat</div>
+          <div class="material-icons">favorite</div>
         </div>
       </footer>
      </article>
