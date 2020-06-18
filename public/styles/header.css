@@ -14,22 +14,3 @@
   align-items: center;
   margin-top: 20px;
 }
-
-@media only screen and (min-width: 1024px) {
-  .header-back {
-      width: 33.3%;
-      margin: 2em 2em 2em 1em;
-  }
-
-  #screen {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 5em 1em 1em 1em;
-  }
-
-  #tweets-container {
-    width: 60%;
-  }
-
-}
