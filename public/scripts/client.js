@@ -18,7 +18,7 @@ $(document).ready(function() {
     let div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
-  }
+  };
 
   //create html template from the data
   const createTweetElement = function(tweet) {
@@ -31,11 +31,8 @@ $(document).ready(function() {
     const days = differenceInTime / (1000 * 60 * 60 * 24);
     const years = Math.floor(days / 365);
     const hours = days * 24;
-    console.log("createTweetElement -> hours", hours)
     const minutes = hours * 60;
-    console.log("createTweetElement -> minutes", minutes)
     const seconds = minutes * 60;
-    console.log("createTweetElement -> seconds", seconds)
     let date;
     if (days > 365) {
       date = years.toFixed(0) + ' years ago';
@@ -69,15 +66,14 @@ $(document).ready(function() {
       </footer>
      </article>
     `);
-    console.log(date);
     return $tweet;
   };
   //validate correct input in textarea
-  const validateTweet = function(string){
-    if ((string === "") || (string === null)){
+  const validateTweet = function(string) {
+    if ((string === "") || (string === null)) {
       $('#error').text('⚠ ERROR: text field empty! ⚠').slideDown();
       return true;
-    } else if (string.length > 140){
+    } else if (string.length > 140) {
       $('#error').text('⚠ ERROR: Exceed character limit ⚠').slideDown();
       return true;
     }
@@ -86,9 +82,9 @@ $(document).ready(function() {
   //AJAX post request from forms
   $('#post-tweet').submit(function(event) {
     event.preventDefault();
-    const text = $('#tweet-text').val().trim()
+    const text = $('#tweet-text').val().trim();
     const validate = validateTweet(text);
-    if (validate){
+    if (validate) {
       return;
     } else {
       $('#error').slideUp();
@@ -97,7 +93,7 @@ $(document).ready(function() {
     $.post('/tweets', data)
       .then(() => {
         loadTweets();
-        $('#tweet-text').val('')
+        $('#tweet-text').val('');
         $('.counter').text(140);
       });
   });
@@ -110,13 +106,13 @@ $(document).ready(function() {
         renderTweets(data);
         hoverShadow();
         
-      }); 
+      });
   };
 
   loadTweets();
   
   //toggles new-tweet section
-  $('#write-tweet').click(function(){
+  $('#write-tweet').click(function() {
     $('.new-tweet').toggle('slow');
     $('#tweet-text').focus();
   });
